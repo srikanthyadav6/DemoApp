@@ -1,0 +1,8 @@
+<p>to-do works!</p>
+<ol>
+    <li *ngFor="let task of tasks; index as i">
+        {{task}} <button (click)="removeTask(i)">del</button>
+    </li>
+</ol>
+<input type="text" #taskInput placeholder="Enter a Task">
+<button (click)="addTask(taskInput.value)" >Add Task</button>
