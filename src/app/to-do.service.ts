@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { Task } from './TaskModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToDoService {
-  public task:string[]=[];
-  toDoObservable$ !: Observable<string>;
+  public tasks:Task[]=[{task:'Hello'}];
   constructor() { 
-
   }
-  addTask(task:string):void{
-    this.task.push(task);
+  initTask():Observable<Task[]>{
+    //TODO get tasks using api
+    return of (this.tasks);
   }
-  removeTask(index:number){
-    this.task.splice(index,1);
+  addTask(task:Task):void{
+    this.tasks.push(task);
+  }
+  removeTask(index:number):void{
+    this.tasks.splice(index,1);
   }
   
 }

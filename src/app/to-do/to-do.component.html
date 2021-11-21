@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <div class="row m-2 justify-content-center bg-info rounded" *ngFor="let task of tasks; index as i">
-        <div class="col-lg-7 p-2 text-light"><p> {{task}} </p></div>
+        <div class="col-lg-7 p-2 text-light"><p> {{task?.task}} </p></div>
         <div class="col-lg-3 p-2"><button type="button" class="btn btn-danger" (click)="removeTask(i)"><i class="bi-trash"></i>Remove task</button></div>
     </div>
 
     <div class="row m-2 justify-content-center bg-info rounded">
         <div class="col-lg-7 p-2" ><input class="form-control" type="text" #taskInput placeholder="Enter a Task"></div>
-        <div class="col-lg-3 p-2"><button type="button" class="btn btn-block btn-primary" (click)="addTask(taskInput.value)" ><i class="bi bi-plus-square-fill"></i>  Add Task</button></div>
+        <div class="col-lg-3 p-2"><button type="button" class="btn btn-block btn-primary" (click)="addTask(taskInput)" ><i class="bi bi-plus-square-fill"></i>  Add Task</button></div>
     </div>
 </div>
